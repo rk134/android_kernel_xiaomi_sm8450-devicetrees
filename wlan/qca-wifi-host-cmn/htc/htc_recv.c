@@ -26,7 +26,7 @@
 void debug_dump_bytes(uint8_t *buffer, uint16_t length, char *pDescription)
 {
 	int8_t stream[60];
-	int8_t byteOffsetStr[10];
+	char byteOffsetStr[6];
 	uint32_t i;
 	uint16_t offset, count, byteOffset;
 
@@ -45,7 +45,7 @@ void debug_dump_bytes(uint8_t *buffer, uint16_t length, char *pDescription)
 		if (count == 16) {
 			count = 0;
 			offset = 0;
-			A_SNPRINTF(byteOffsetStr, sizeof(byteOffset), "%4.4X",
+			A_SNPRINTF(byteOffsetStr, sizeof(byteOffsetStr), "%4.4X",
 				   byteOffset);
 			A_PRINTF("[%s]: %s\n", byteOffsetStr, stream);
 			qdf_mem_zero(stream, 60);
@@ -54,7 +54,7 @@ void debug_dump_bytes(uint8_t *buffer, uint16_t length, char *pDescription)
 	}
 
 	if (offset != 0) {
-		A_SNPRINTF(byteOffsetStr, sizeof(byteOffset), "%4.4X",
+		A_SNPRINTF(byteOffsetStr, sizeof(byteOffsetStr), "%4.4X",
 			   byteOffset);
 		A_PRINTF("[%s]: %s\n", byteOffsetStr, stream);
 	}
