@@ -1254,7 +1254,7 @@ static int aw882xx_set_fade_out_time(struct snd_kcontrol *kcontrol,
 	return 0;
 }
 
-#ifndef CONFIG_TARGET_PRODUCT_ZIYI
+#ifndef CONFIG_XIAOMI_PRODUCT_ZIYI
 static int aw882xx_spksw_gpio_get(struct snd_kcontrol *kcontrol,
 				    struct snd_ctl_elem_value *ucontrol)
 {
@@ -1309,7 +1309,7 @@ static struct snd_kcontrol_new aw882xx_controls[] = {
 	SOC_SINGLE_EXT("aw882xx_fadeout_us", 0, 0, 1000000, 0,
 		aw882xx_get_fade_out_time, aw882xx_set_fade_out_time),
 
-#ifndef CONFIG_TARGET_PRODUCT_ZIYI
+#ifndef CONFIG_XIAOMI_PRODUCT_ZIYI
 	SOC_SINGLE_EXT("aw882xx_spk_sw_gpio_switch", SND_SOC_NOPM, 0, 0x3, 0,
 		       aw882xx_spksw_gpio_get, aw882xx_spksw_gpio_put),
 #endif
@@ -1477,7 +1477,7 @@ static int aw882xx_codec_probe(aw_snd_soc_codec_t *aw_codec)
 	INIT_DELAYED_WORK(&aw882xx->fw_work, aw882xx_request_firmware);
 
 	aw882xx->codec = aw_codec;
-#ifndef CONFIG_TARGET_PRODUCT_ZIYI
+#ifndef CONFIG_XIAOMI_PRODUCT_ZIYI
 	aw882xx->spksw_level = 0;
 #endif
 
@@ -1628,7 +1628,7 @@ static int aw882xx_parse_gpio_dt(struct aw882xx *aw882xx,
 	if (!np) {
 		aw882xx->reset_gpio = -1;
 		aw882xx->irq_gpio = -1;
-#ifndef CONFIG_TARGET_PRODUCT_ZIYI
+#ifndef CONFIG_XIAOMI_PRODUCT_ZIYI
 		aw882xx->spksw_gpio = -1;
 #endif
 		return -EINVAL;
@@ -1647,7 +1647,7 @@ static int aw882xx_parse_gpio_dt(struct aw882xx *aw882xx,
 		aw_dev_info(aw882xx->dev, "irq gpio provided ok.");
 	}
 
-#ifndef CONFIG_TARGET_PRODUCT_ZIYI
+#ifndef CONFIG_XIAOMI_PRODUCT_ZIYI
 	aw882xx->spksw_gpio = of_get_named_gpio(np, "spksw-gpio", 0);
 	if (aw882xx->spksw_gpio < 0) {
 	aw_dev_info(aw882xx->dev, "no spksw gpio provided.");
@@ -1707,7 +1707,7 @@ static int aw882xx_gpio_request(struct aw882xx *aw882xx)
 		}
 	}
 
-#ifndef CONFIG_TARGET_PRODUCT_ZIYI
+#ifndef CONFIG_XIAOMI_PRODUCT_ZIYI
 	if (gpio_is_valid(aw882xx->spksw_gpio)) {
 		ret = devm_gpio_request_one(aw882xx->dev, aw882xx->spksw_gpio,
 			GPIOF_OUT_INIT_LOW, "aw882xx_spksw");
@@ -2568,7 +2568,7 @@ static int aw882xx_i2c_remove(struct i2c_client *i2c)
 	if (gpio_is_valid(aw882xx->reset_gpio))
 		devm_gpio_free(&i2c->dev, aw882xx->reset_gpio);
 
-#ifndef CONFIG_TARGET_PRODUCT_ZIYI
+#ifndef CONFIG_XIAOMI_PRODUCT_ZIYI
 	if (gpio_is_valid(aw882xx->spksw_gpio))
 		devm_gpio_free(&i2c->dev, aw882xx->spksw_gpio);
 #endif

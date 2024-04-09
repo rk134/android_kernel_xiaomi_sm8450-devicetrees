@@ -148,7 +148,7 @@ struct aw882xx {
 	int reset_gpio;
 	int irq_gpio;
 
-#ifndef CONFIG_TARGET_PRODUCT_ZIYI
+#ifndef CONFIG_XIAOMI_PRODUCT_ZIYI
 	int spksw_gpio;
 	int spksw_level;
 #endif

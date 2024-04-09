@@ -1874,7 +1874,7 @@ static int wcd_mbhc_init_gpio(struct wcd_mbhc *mbhc,
 static int wcd_mbhc_usbc_ana_event_handler(struct notifier_block *nb,
 					   unsigned long mode, void *ptr)
 {
-#if defined(CONFIG_TARGET_PRODUCT_ZIYI) || defined(CONFIG_TARGET_PRODUCT_YUDI)
+#if defined(CONFIG_XIAOMI_PRODUCT_ZIYI) || defined(CONFIG_XIAOMI_PRODUCT_YUDI)
 	u8 det_status = 0;
 #endif
 	struct wcd_mbhc *mbhc = container_of(nb, struct wcd_mbhc, fsa_nb);
@@ -1896,7 +1896,7 @@ static int wcd_mbhc_usbc_ana_event_handler(struct notifier_block *nb,
 		/* insertion detected, enable L_DET_EN */
 		WCD_MBHC_REG_UPDATE_BITS(WCD_MBHC_L_DET_EN, 0);
 		WCD_MBHC_REG_UPDATE_BITS(WCD_MBHC_L_DET_EN, 1);
-#if defined(CONFIG_TARGET_PRODUCT_ZIYI) || defined(CONFIG_TARGET_PRODUCT_YUDI)
+#if defined(CONFIG_XIAOMI_PRODUCT_ZIYI) || defined(CONFIG_XIAOMI_PRODUCT_YUDI)
 		WCD_MBHC_REG_READ(WCD_MBHC_L_DET_EN,det_status);
 		pr_debug("%s: det_status = %x\n",__func__,det_status);
 #endif
@@ -1905,7 +1905,7 @@ static int wcd_mbhc_usbc_ana_event_handler(struct notifier_block *nb,
 		msm_cdc_pinctrl_select_sleep_state(config->uart_audio_switch_gpio_p);
 		dev_dbg(mbhc->component->dev, "enable uart\n");
 #endif
-#if defined(CONFIG_TARGET_PRODUCT_ZIYI) || defined(CONFIG_TARGET_PRODUCT_YUDI)
+#if defined(CONFIG_XIAOMI_PRODUCT_ZIYI) || defined(CONFIG_XIAOMI_PRODUCT_YUDI)
 		if (mode == TYPEC_ACCESSORY_NONE && mbhc->current_plug == MBHC_PLUG_TYPE_NONE) {
 			mbhc->hs_detect_work_stop = true;
 			/* Disable HW FSM */

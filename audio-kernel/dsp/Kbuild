@@ -181,7 +181,7 @@ ifdef CONFIG_DIGITAL_CDC_RSC_MGR
 	SPF_CORE_OBJS += digital-cdc-rsc-mgr.o
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), yudi))
+ifneq (,$(filter $(XIAOMI_PRODUCT), yudi))
 	CDEFINES += -DCONFIG_MMHARDWARE_DETECTION
 endif
 

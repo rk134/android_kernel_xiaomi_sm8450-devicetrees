@@ -917,7 +917,7 @@ report:
 	WCD_MBHC_REG_UPDATE_BITS(WCD_MBHC_ADC_MODE, 0);
 	WCD_MBHC_REG_UPDATE_BITS(WCD_MBHC_ADC_EN, 0);
 
-#if defined(CONFIG_TARGET_PRODUCT_ZIYI) || defined(CONFIG_TARGET_PRODUCT_YUDI)
+#if defined(CONFIG_XIAOMI_PRODUCT_ZIYI) || defined(CONFIG_XIAOMI_PRODUCT_YUDI)
 	if (mbhc->hs_detect_work_stop) {
 		pr_debug("%s: stop requested: %d\n", __func__,
 				mbhc->hs_detect_work_stop);
@@ -1152,7 +1152,7 @@ static irqreturn_t wcd_mbhc_adc_hs_ins_irq(int irq, void *data)
 		 * check clamp for 120ms but at 30ms chunks to leave
 		 * room for other interrupts to be processed
 		 */
-#ifdef CONFIG_TARGET_PRODUCT_ZIYI
+#ifdef CONFIG_XIAOMI_PRODUCT_ZIYI
 		usleep_range(45000, 45100);
 #else
 		usleep_range(30000, 30100);

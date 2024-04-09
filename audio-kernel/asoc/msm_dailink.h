@@ -232,7 +232,7 @@ SND_SOC_DAILINK_DEFS(proxy_rx,
 	DAILINK_COMP_ARRAY(COMP_DUMMY()),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
 
-#if defined(CONFIG_TARGET_PRODUCT_ZIYI) || defined(CONFIG_TARGET_PRODUCT_CAIWEI)
+#if defined(CONFIG_XIAOMI_PRODUCT_ZIYI) || defined(CONFIG_XIAOMI_PRODUCT_CAIWEI)
 SND_SOC_DAILINK_DEFS(pri_mi2s_rx,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("aw882xx_smartpa.5-0035", "aw882xx-aif-5-35")),
@@ -244,7 +244,7 @@ SND_SOC_DAILINK_DEFS(pri_mi2s_rx,
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
 #endif
 
-#if defined(CONFIG_TARGET_PRODUCT_ZIYI) || defined(CONFIG_TARGET_PRODUCT_CAIWEI)
+#if defined(CONFIG_XIAOMI_PRODUCT_ZIYI) || defined(CONFIG_XIAOMI_PRODUCT_CAIWEI)
 SND_SOC_DAILINK_DEFS(pri_mi2s_tx,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("aw882xx_smartpa.5-0035", "aw882xx-aif-5-35")),
@@ -326,7 +326,7 @@ SND_SOC_DAILINK_DEFS(sec_tdm_tx_0,
 	DAILINK_COMP_ARRAY(COMP_CODEC("msm-stub-codec.1", "msm-stub-tx")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
 
-#if defined(CONFIG_TARGET_PRODUCT_ZEUS)
+#if defined(CONFIG_XIAOMI_PRODUCT_ZEUS)
 SND_SOC_DAILINK_DEFS(tert_tdm_rx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("cs35l41.2-0040", "cs35l41.2-0040"),
@@ -334,13 +334,13 @@ SND_SOC_DAILINK_DEFS(tert_tdm_rx_0,
 			    COMP_CODEC("cs35l41.2-0042", "cs35l41.2-0042"),
 			    COMP_CODEC("cs35l41.2-0043", "cs35l41.2-0043")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
-#elif defined(CONFIG_TARGET_PRODUCT_CUPID)
+#elif defined(CONFIG_XIAOMI_PRODUCT_CUPID)
 SND_SOC_DAILINK_DEFS(tert_tdm_rx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("cs35l41.2-0040", "cs35l41.2-0040"),
 			    COMP_CODEC("cs35l41.2-0042", "cs35l41.2-0042")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
-#elif defined(CONFIG_TARGET_PRODUCT_INGRES)
+#elif defined(CONFIG_XIAOMI_PRODUCT_INGRES)
 SND_SOC_DAILINK_DEFS(tert_tdm_rx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("cs35l41.2-0040", "cs35l41.2-0040"),
@@ -348,49 +348,49 @@ SND_SOC_DAILINK_DEFS(tert_tdm_rx_0,
 			    COMP_CODEC("cs35l41.2-0042", "cs35l41.2-0042"),
 			    COMP_CODEC("cs35l41.2-0043", "cs35l41.2-0043")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
-#elif defined(CONFIG_TARGET_PRODUCT_THOR)
+#elif defined(CONFIG_XIAOMI_PRODUCT_THOR)
 SND_SOC_DAILINK_DEFS(tert_tdm_rx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("cs35l41.2-0042", "cs35l41.2-0042"),
 			    COMP_CODEC("cs35l41.2-0043", "cs35l41.2-0043")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
-#elif defined(CONFIG_TARGET_PRODUCT_ZIZHAN)
+#elif defined(CONFIG_XIAOMI_PRODUCT_ZIZHAN)
 SND_SOC_DAILINK_DEFS(tert_tdm_rx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("cs35l41.2-0040", "cs35l41.2-0040"),
 			    COMP_CODEC("cs35l41.2-0042", "cs35l41.2-0042")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
-#elif defined(CONFIG_TARGET_PRODUCT_UNICORN)
+#elif defined(CONFIG_XIAOMI_PRODUCT_UNICORN)
 SND_SOC_DAILINK_DEFS(tert_tdm_rx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("cs35l41.2-0040", "cs35l41.2-0040"),
 			    COMP_CODEC("cs35l41.2-0043", "cs35l41.2-0043")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
-#elif defined(CONFIG_TARGET_PRODUCT_MAYFLY)
+#elif defined(CONFIG_XIAOMI_PRODUCT_MAYFLY)
 SND_SOC_DAILINK_DEFS(tert_tdm_rx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("aw882xx_smartpa.2-0035", "aw882xx-aif-2-35"),
 			   COMP_CODEC("aw882xx_smartpa.2-0034", "aw882xx-aif-2-34")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
-#elif defined(CONFIG_TARGET_PRODUCT_DITING)
+#elif defined(CONFIG_XIAOMI_PRODUCT_DITING)
 SND_SOC_DAILINK_DEFS(tert_tdm_rx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("cs35l41.2-0040", "cs35l41.2-0040"),
 			    COMP_CODEC("cs35l41.2-0042", "cs35l41.2-0042")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
-#elif defined(CONFIG_TARGET_PRODUCT_MONDRIAN)
+#elif defined(CONFIG_XIAOMI_PRODUCT_MONDRIAN)
 SND_SOC_DAILINK_DEFS(tert_tdm_rx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("aw882xx_smartpa.2-0035", "aw882xx-aif-2-35"),
 			   COMP_CODEC("aw882xx_smartpa.2-0034", "aw882xx-aif-2-34")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
-#elif defined(CONFIG_TARGET_PRODUCT_MARBLE)
+#elif defined(CONFIG_XIAOMI_PRODUCT_MARBLE)
 SND_SOC_DAILINK_DEFS(tert_tdm_rx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("aw882xx_smartpa.2-0035", "aw882xx-aif-2-35"),
 			   COMP_CODEC("aw882xx_smartpa.2-0034", "aw882xx-aif-2-34")),
     DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
-#elif defined(CONFIG_TARGET_PRODUCT_YUDI)
+#elif defined(CONFIG_XIAOMI_PRODUCT_YUDI)
 SND_SOC_DAILINK_DEFS(tert_tdm_rx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("cs35l43.2-0040", "cs35l43-pcm"),
@@ -414,25 +414,25 @@ SND_SOC_DAILINK_DEFS(tert_tdm_rx_0_pre,
 	DAILINK_COMP_ARRAY(COMP_CODEC("msm-stub-codec.1", "msm-stub-rx")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
 
-#if defined(CONFIG_TARGET_PRODUCT_MAYFLY)
+#if defined(CONFIG_XIAOMI_PRODUCT_MAYFLY)
 SND_SOC_DAILINK_DEFS(tert_tdm_tx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("aw882xx_smartpa.2-0035", "aw882xx-aif-2-35"),
 			   COMP_CODEC("aw882xx_smartpa.2-0034", "aw882xx-aif-2-34")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
-#elif defined(CONFIG_TARGET_PRODUCT_MONDRIAN)
+#elif defined(CONFIG_XIAOMI_PRODUCT_MONDRIAN)
 SND_SOC_DAILINK_DEFS(tert_tdm_tx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("aw882xx_smartpa.2-0035", "aw882xx-aif-2-35"),
 			   COMP_CODEC("aw882xx_smartpa.2-0034", "aw882xx-aif-2-34")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
-#elif defined(CONFIG_TARGET_PRODUCT_MARBLE)
+#elif defined(CONFIG_XIAOMI_PRODUCT_MARBLE)
 SND_SOC_DAILINK_DEFS(tert_tdm_tx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("aw882xx_smartpa.2-0035", "aw882xx-aif-2-35"),
 		COMP_CODEC("aw882xx_smartpa.2-0034", "aw882xx-aif-2-34")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
-#elif defined(CONFIG_TARGET_PRODUCT_YUDI)
+#elif defined(CONFIG_XIAOMI_PRODUCT_YUDI)
 SND_SOC_DAILINK_DEFS(tert_tdm_tx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("cs35l43.2-0040", "cs35l43-pcm"),
@@ -461,7 +461,7 @@ SND_SOC_DAILINK_DEFS(quat_tdm_tx_0,
 	DAILINK_COMP_ARRAY(COMP_CODEC("msm-stub-codec.1", "msm-stub-tx")),
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
 
-#if defined(CONFIG_TARGET_PRODUCT_GARNET)
+#if defined(CONFIG_XIAOMI_PRODUCT_GARNET)
 SND_SOC_DAILINK_DEFS(quin_tdm_rx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("aw882xx_smartpa.2-0035", "aw882xx-aif-2-35"),
@@ -474,7 +474,7 @@ SND_SOC_DAILINK_DEFS(quin_tdm_rx_0,
 	DAILINK_COMP_ARRAY(COMP_PLATFORM("snd-soc-dummy")));
 #endif
 
-#if defined(CONFIG_TARGET_PRODUCT_GARNET)
+#if defined(CONFIG_XIAOMI_PRODUCT_GARNET)
 SND_SOC_DAILINK_DEFS(quin_tdm_tx_0,
 	DAILINK_COMP_ARRAY(COMP_CPU("snd-soc-dummy-dai")),
 	DAILINK_COMP_ARRAY(COMP_CODEC("aw882xx_smartpa.2-0035", "aw882xx-aif-2-35"),

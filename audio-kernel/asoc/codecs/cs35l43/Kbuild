@@ -81,16 +81,16 @@ ifeq ($(TARGET_PRODUCT), $(filter $(TARGET_PRODUCT), taro))
        CDEFINES += -DCONFIG_AUDIO_SMARTPA_STEREO
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), ingres))
+ifneq (,$(filter $(XIAOMI_PRODUCT), ingres))
 	CDEFINES += -DCONFIG_SWITCH_PROTECTION
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_INGRES
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_INGRES
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), liuqin))
+ifneq (,$(filter $(XIAOMI_PRODUCT), liuqin))
 	CDEFINES += -DCONFIG_MMHARDWARE_DETECTION
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), yudi))
+ifneq (,$(filter $(XIAOMI_PRODUCT), yudi))
 	CDEFINES += -DCONFIG_MMHARDWARE_DETECTION
 endif
 
@@ -104,20 +104,20 @@ CDEFINES +=	-DANI_LITTLE_BYTE_ENDIAN \
 		-Werror\
 		-D__linux__
 
-ifneq (,$(filter $(TARGET_PRODUCT), zeus))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_ZEUS
+ifneq (,$(filter $(XIAOMI_PRODUCT), zeus))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_ZEUS
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), cupid))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_CUPID
+ifneq (,$(filter $(XIAOMI_PRODUCT), cupid))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_CUPID
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), thor))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_THOR
+ifneq (,$(filter $(XIAOMI_PRODUCT), thor))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_THOR
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), diting))
-        CDEFINES += -DCONFIG_TARGET_PRODUCT_DITING
+ifneq (,$(filter $(XIAOMI_PRODUCT), diting))
+        CDEFINES += -DCONFIG_XIAOMI_PRODUCT_DITING
 endif
 
 KBUILD_CPPFLAGS += $(CDEFINES)
