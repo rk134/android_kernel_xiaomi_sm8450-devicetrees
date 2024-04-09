@@ -90,19 +90,19 @@ CDEFINES +=	-DANI_LITTLE_BYTE_ENDIAN \
 		-Werror\
 		-D__linux__
 
-ifneq (,$(filter $(XIAOMI_PRODUCT), ingres))
-	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_INGRES
+ifneq (,$(filter $(TARGET_PRODUCT), ingres))
+	CDEFINES += -DCONFIG_TARGET_PRODUCT_INGRES
 endif
 
-ifneq (,$(filter $(XIAOMI_PRODUCT), ziyi))
-     CDEFINES += -DCONFIG_XIAOMI_PRODUCT_ZIYI
+ifneq (,$(filter $(TARGET_PRODUCT), ziyi))
+     CDEFINES += -DCONFIG_TARGET_PRODUCT_ZIYI
 endif
 
-ifneq (,$(filter $(XIAOMI_PRODUCT), yudi))
-        CDEFINES += -DCONFIG_XIAOMI_PRODUCT_YUDI
+ifneq (,$(filter $(TARGET_PRODUCT), yudi))
+        CDEFINES += -DCONFIG_TARGET_PRODUCT_YUDI
 endif
 
-ifneq (,$(filter $(XIAOMI_PRODUCT), yudi))
+ifneq (,$(filter $(TARGET_PRODUCT), yudi))
 	CDEFINES += -DCONFIG_MMHARDWARE_DETECTION
 endif
 

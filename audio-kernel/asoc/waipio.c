@@ -123,7 +123,7 @@ static int msm_int_wsa_init(struct snd_soc_pcm_runtime*);
 static struct wcd_mbhc_config wcd_mbhc_cfg = {
 	.read_fw_bin = false,
 	.calibration = NULL,
-#if defined(CONFIG_XIAOMI_PRODUCT_ZIYI)
+#if defined(CONFIG_TARGET_PRODUCT_ZIYI)
 	.detect_extn_cable = false,
 #else
 	.detect_extn_cable = true,

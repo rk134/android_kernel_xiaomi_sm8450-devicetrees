@@ -55,7 +55,7 @@ static const char * const cs35l41_supplies[] = {
 	"VP",
 };
 
-#if defined(CONFIG_XIAOMI_PRODUCT_THOR)||defined(CONFIG_XIAOMI_PRODUCT_DITING)
+#if defined(CONFIG_TARGET_PRODUCT_THOR)||defined(CONFIG_TARGET_PRODUCT_DITING)
 static const char * const rcv_pctl_names[] = {
 	"rcv_gpio_high",
 	"rcv_gpio_low",
@@ -3815,7 +3815,7 @@ static struct attribute_group cs35l41_attribute_group = {
 	.attrs = cs35l41_attributes,
 };
 
-#if defined(CONFIG_XIAOMI_PRODUCT_THOR)||defined(CONFIG_XIAOMI_PRODUCT_DITING)
+#if defined(CONFIG_TARGET_PRODUCT_THOR)||defined(CONFIG_TARGET_PRODUCT_DITING)
 static int cs35l41_rcv_handset_switch_init(struct cs35l41_private *cs35l41)
 {
 	int ret = 0, i =0;
@@ -3931,7 +3931,7 @@ int cs35l41_probe(struct cs35l41_private *cs35l41,
 	/* Add a switch for L2 project to switch between differnt modes */
 	cs35l41_spksw_gpio_init(cs35l41);
 
-#if defined(CONFIG_XIAOMI_PRODUCT_THOR)||defined(CONFIG_XIAOMI_PRODUCT_DITING)
+#if defined(CONFIG_TARGET_PRODUCT_THOR)||defined(CONFIG_TARGET_PRODUCT_DITING)
 	/* Add a switch for L1 project to switch rcv gpio52 modes */
 	cs35l41_rcv_handset_switch_init(cs35l41);
 #endif
@@ -4125,11 +4125,11 @@ int cs35l41_probe(struct cs35l41_private *cs35l41,
 
 	// Initial Brownout parameter
 	ret = regmap_update_bits(cs35l41->regmap, CS35L41_PWR_CTRL3, 0x1000, 0x1000);
-#if defined(CONFIG_XIAOMI_PRODUCT_ZEUS) // L2
+#if defined(CONFIG_TARGET_PRODUCT_ZEUS) // L2
 	ret = regmap_write(cs35l41->regmap, CS35L41_VPBR_CFG, 0x02005309);
-#elif defined(CONFIG_XIAOMI_PRODUCT_CUPID) // L3
+#elif defined(CONFIG_TARGET_PRODUCT_CUPID) // L3
 	ret = regmap_write(cs35l41->regmap, CS35L41_VPBR_CFG, 0x02005306);
-#elif defined(CONFIG_XIAOMI_PRODUCT_INGRES) // L10
+#elif defined(CONFIG_TARGET_PRODUCT_INGRES) // L10
 	ret = regmap_write(cs35l41->regmap, CS35L41_PWR_CTRL3, 0x01001010);
 	ret = regmap_write(cs35l41->regmap, CS35L41_VPBR_CFG, 0x02AA130A);
 #else
