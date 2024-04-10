@@ -90,8 +90,8 @@ CDEFINES +=	-DANI_LITTLE_BYTE_ENDIAN \
 		-D__linux__ \
 		-DDEBUG
 
-ifneq (,$(filter $(TARGET_PRODUCT), ziyi))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_ZIYI
+ifneq (,$(filter $(XIAOMI_PRODUCT), ziyi))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_ZIYI
 endif
 
 

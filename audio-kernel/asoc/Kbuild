@@ -215,56 +215,56 @@ CDEFINES +=	-DANI_LITTLE_BYTE_ENDIAN \
 		-Werror\
 		-D__linux__
 
-ifneq (,$(filter $(TARGET_PRODUCT), zeus))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_ZEUS
+ifneq (,$(filter $(XIAOMI_PRODUCT), zeus))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_ZEUS
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), thor))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_THOR
+ifneq (,$(filter $(XIAOMI_PRODUCT), thor))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_THOR
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), cupid))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_CUPID
+ifneq (,$(filter $(XIAOMI_PRODUCT), cupid))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_CUPID
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), ingres))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_INGRES
+ifneq (,$(filter $(XIAOMI_PRODUCT), ingres))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_INGRES
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), zizhan))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_ZIZHAN
+ifneq (,$(filter $(XIAOMI_PRODUCT), zizhan))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_ZIZHAN
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), unicorn))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_UNICORN
+ifneq (,$(filter $(XIAOMI_PRODUCT), unicorn))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_UNICORN
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), ziyi))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_ZIYI
+ifneq (,$(filter $(XIAOMI_PRODUCT), ziyi))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_ZIYI
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), mayfly))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_MAYFLY
+ifneq (,$(filter $(XIAOMI_PRODUCT), mayfly))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_MAYFLY
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), diting))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_DITING
+ifneq (,$(filter $(XIAOMI_PRODUCT), diting))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_DITING
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), mondrian))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_MONDRIAN
+ifneq (,$(filter $(XIAOMI_PRODUCT), mondrian))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_MONDRIAN
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), marble))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_MARBLE
+ifneq (,$(filter $(XIAOMI_PRODUCT), marble))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_MARBLE
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), yudi))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_YUDI
+ifneq (,$(filter $(XIAOMI_PRODUCT), yudi))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_YUDI
 endif
 
-ifneq (,$(filter $(TARGET_PRODUCT), garnet))
-	CDEFINES += -DCONFIG_TARGET_PRODUCT_GARNET
+ifneq (,$(filter $(XIAOMI_PRODUCT), garnet))
+	CDEFINES += -DCONFIG_XIAOMI_PRODUCT_GARNET
 endif
 
 KBUILD_CPPFLAGS += $(CDEFINES)
