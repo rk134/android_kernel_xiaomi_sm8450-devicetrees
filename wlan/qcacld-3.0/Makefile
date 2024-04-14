@@ -24,6 +24,7 @@ KBUILD_OPTIONS += \
     DYNAMIC_SINGLE_CHIP=qca6490 \
     MODNAME=qca_cld3_qca6490 \
     DEVNAME=qca6490 \
+    BOARD_PLATFORM=taro \
     WLAN_CTRL_NAME=wlan
 endif
 
